@@ -1,0 +1,247 @@
+.ui.inverted.fixed.menu {
+  background-image: url(/static/img/search/back.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: transparent;
+}
+#result-segment {
+  background: rgba(255, 255, 255, 0);
+  border-radius: 0;
+}
+#search-type-menu {
+  border-width: 0;
+  margin-bottom: 0;
+}
+#search-type-menu .item {
+  transition: all 0.1s ease;
+}
+#search-type-menu > .active.item {
+  border-color: #ffd405;
+}
+#tool-container {
+  margin-left: 10.5rem;
+  margin-top: 1rem;
+  width: 44rem;
+}
+#result-container {
+  margin-left: 10.5rem;
+  width: 44rem;
+  position: absolute;
+  padding-top: 0.5rem;
+}
+div.line {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  color: white;
+  font-size: 1rem;
+}
+.ui.text.menu {
+  margin: 0;
+}
+.ui.label {
+  border: 1px solid rgba(34, 36, 38, 0.15);
+}
+#result-span {
+  margin-left: 1ex;
+  margin-right: 2.5rem;
+}
+body {
+  background-image: url("/static/img/search/back.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+#result-box {
+  background: white;
+}
+.ui.items:last-child {
+  margin-bottom: 1rem !important;
+}
+.ui.items>.item {
+  padding: 1rem;
+  min-height: 10rem;
+  background: rgba(255,255,255,0.7);
+  position: relative;
+  transition: max-height 2s linear;
+}
+.ui.items>.item>.image {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 10rem !important;
+}
+.ui.items>.item>.content {
+  position: relative;
+  font-size: 1rem;
+  padding-bottom: 1.2em;
+}
+.ui.items>.item>.content>.ui.header {
+  color: #333333;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 27rem;
+  margin-top: 0;
+}
+.ui.items>.item>.content>.ui.header>span.smaller {
+  font-size: 1.25rem;
+}
+.ui.items>.item>.content>.medal {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.ui.items>.item>.chassis {
+  position: absolute;
+  left: 12.5rem;
+  bottom: 1rem;
+  margin-bottom: 0;
+  color: #333333;
+  font-size: 1rem;
+}
+.ui.items>.item>.rewards {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  font-size: 1rem;
+}
+.ui.items>.item>.content>.description {
+  margin-top: 0;
+  max-height: 2.4em;
+  overflow: hidden;
+}
+.ui.items>.item>.content>.description>p {
+    line-height: 1.2em;
+}
+.ui.items>.item>.content>.ui.flowing.popup p, li {
+  white-space: nowrap;
+}
+#also-try {
+  padding-top: 0;
+}
+a {
+  cursor: pointer;
+}
+.no-result a {
+  color: #ffd800;
+}
+#tool {
+  color: white;
+}
+div#tool-popup {
+  padding: 0;
+}
+#tool-popup:before {
+  background-color: #eeeeee;
+}
+#tool-popup p {
+  background-color: #eeeeee;
+  padding-left: 1rem;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+#tool-popup .ui.labels {
+  margin: 0.5rem 0.4rem;
+  max-width: 35rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#tool-popup a.ui.label {
+  border: 0;
+  background-color: #438ac9;
+  color: white;
+  font-size: 0.9rem;
+  padding: 0.5em;
+  margin: 0.1em 0.5em;
+  font-weight: 500;
+}
+#tool-popup a.ui.basic.label {
+  background-color: #ffffff;
+  color: black;
+}
+#tool-popup .ui.submit.button {
+  margin-left: 1rem;
+  box-shadow: unset;
+  border: #438ac9 solid 2px;
+  margin-bottom: 1rem;
+  background: transparent;
+  padding: 0.25em 1em 0.3em 1em;
+  vertical-align: middle;
+}
+#right-panel-container {
+  margin-left: 55.5rem;
+  padding-top: 0.5rem;
+}
+.right-panel {
+  width: 26rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+.right-panel>.header {
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 2rem;
+  padding-left: 0.5em;
+  display: flex;
+  align-items: center;
+}
+.right-panel>.header>img {
+  height: 1.5em !important;
+  width: auto !important;
+  margin-right: 0.5em;
+}
+.right-panel>.header>.header {
+  font-size: 1em;
+  margin: 0;
+}
+.right-panel>.content {
+  padding: 1em;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+}
+.right-panel>.content>img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1em;
+}
+.right-panel>.wiki-pic {
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.5em;
+}
+.right-panel>p, a {
+  margin-bottom: 0;
+}
+
+/* SVG of d3 */
+line {
+  stroke: #fff;
+  stroke-opacity: 0.6;
+}
+circle {
+  stroke: #fff;
+  cursor: pointer;
+}
+circle:hover {
+  stroke-width: 1.5px;
+}
+text {
+  paint-order: stroke;
+  stroke-width: 3px;
+  fill: white;
+}
+.no-result {
+  color: white;
+  font-size: 1.25rem;
+}
+.no-result h5.ui.header {
+  font-size: 1em;
+  color: white;
+  margin-bottom: 0.2rem;
+}
+.no-result p {
+  margin-bottom: 0.2rem;
+}
