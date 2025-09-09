@@ -1,0 +1,14 @@
+.idea/
+*.sublime-*
+*.mp4
+*.orig
+*.tmp
+*__pycache__/
+synthetic/ckpt/
+synthetic/figs/
+sampling/ckpt/
+sampling/figs/
+nsgan/checkpoint/
+nsgan/data/
+nsgan/results/
+nsgan/logs/
