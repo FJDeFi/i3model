@@ -1,0 +1,199 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>{{ request.GET.q }} - Search projects - S-Din</title>
+    <link rel="shortcut icon" href="/static/img/favicon.png">
+    <link rel="stylesheet" href="/static/css/fontsize.css">
+    <link rel="stylesheet" href="/static/semantic/dist/semantic.min.css">
+    <link rel="stylesheet" href="/static/semantic/dist/components/icon.min.css">
+    <link rel="stylesheet" href="/static/semantic/dist/components/menu.min.css">
+    <link rel="stylesheet" href="/static/semantic/dist/components/popup.min.css">
+    <link rel="stylesheet" href="/static/css/search/work.css">
+  </head>
+  <body>
+    {% include '../nav.html' %}
+
+    {% include '../search-box.html' %}
+    <link rel="stylesheet" href="/static/css/search-box.css">
+
+    <div id="tool-container">
+      <div id="search-type-menu" class="ui secondary pointing inverted menu">
+        <a class="active item">Project</a>
+        <a class="item" href="/search/part?q={{ request.GET.q }}">Parts</a>
+        <a class="item" href="/search/paper?q={{ request.GET.q }}">Paper</a>
+      </div>
+      <div class="line">
+        <code>{{ resultsCount }}</code><span id="result-span">RESULTS</span>
+        <a id="tool">Search Tools<i class="filter icon"></i></a>
+        <div id="tool-popup" data-keyword="{{ request.GET.q }}" class="ui flowing popup transition hidden">
+          <p>Year</p>
+          <div class="ui labels">
+            <a class="ui basic label" data-type="year" data-value="2009">2009</a>
+            <a class="ui basic label" data-type="year" data-value="2010">2010</a>
+            <a class="ui basic label" data-type="year" data-value="2011">2011</a>
+            <a class="ui basic label" data-type="year" data-value="2012">2012</a>
+            <a class="ui basic label" data-type="year" data-value="2013">2013</a>
+            <a class="ui basic label" data-type="year" data-value="2014">2014</a>
+            <a class="ui basic label" data-type="year" data-value="2015">2015</a>
+            <a class="ui basic label" data-type="year" data-value="2016">2016</a>
+          </div>
+          <p>Medal</p>
+          <div class="ui labels">
+            <a class="ui basic label" data-type="medal" data-value="gold">Gold</a>
+            <a class="ui basic label" data-type="medal" data-value="silver">Silver</a>
+            <a class="ui basic label" data-type="medal" data-value="bronze">Bronze</a>
+          </div>
+          <p>Track</p>
+          <div class="ui labels">
+            <a class="ui basic label" data-type="track" data-value="artDesign">Art & Design</a>
+            <a class="ui basic label" data-type="track" data-value="diagnostics">Diagnostics</a>
+            <a class="ui basic label" data-type="track" data-value="energy">Energy</a>
+            <a class="ui basic label" data-type="track" data-value="environment">Environment</a>
+            <a class="ui basic label" data-type="track" data-value="foodEnergy">Food & Energy</a>
+            <a class="ui basic label" data-type="track" data-value="foodAndNutrition">Food and Nutrition</a>
+            <a class="ui basic label" data-type="track" data-value="foundationalAdvance">Foundational Advance</a>
+            <a class="ui basic label" data-type="track" data-value="hardware">Hardware</a>
+            <a class="ui basic label" data-type="track" data-value="healthMedicine">Health & Medicine</a>
+            <a class="ui basic label" data-type="track" data-value="highSchool">High School</a>
+            <a class="ui basic label" data-type="track" data-value="informationProcessing">Information Processing</a>
+            <a class="ui basic label" data-type="track" data-value="manufacturing">Manufacturing</a>
+            <a class="ui basic label" data-type="track" data-value="measurement">Measurement</a>
+            <a class="ui basic label" data-type="track" data-value="newApplication">New Application</a>
+            <a class="ui basic label" data-type="track" data-value="software">Software</a>
+            <a class="ui basic label" data-type="track" data-value="therapeutics">Therapeutic</a>
+          </div>
+          <div id="complex-search" class="ui submit basic button">Apply</div>
+        </div>
+      </div>
+    </div>
+    <div id="result-container">
+      {% if resultsCount == 0 %}
+      <div class="no-result">
+        <p>No results found for <b>{{ request.GET.q }}</b>.</p>
+        <h5 class="ui header">Search tips:</h5>
+        <p>Ensure words are spelled correctly.</p>
+        <p>Try rephrasing keywords or using synonyms.</p>
+        <p>Try less specific keywords.</p>
+        <p>Make your queries as concise as possible.</p>
+        <h5 class="ui header">Other resources that may help you:</h5>
+        <p>Get additional search tips by visiting <a>Web Search Help</a>.</p>
+        <p>If you cannot find a page that you know exists, <a href="mailto:sysusoftware@126.com"> send the address to us</a>.</p>
+      </div>
+      {% endif %}
+      <div id="result-list">
+        <div class="ui items">
+          {% for work in works %}
+          <div class="link item">
+            <div class="image" style="background-image: url('{{ work.logo }}')"></div>
+            <div class="content">
+              <a class="ui header" target="_self" href="/work?id={{ work.id }}">{{ work.projectName }}</a>
+              <img class="medal" src="/static/img/search/{{ work.medal }}.png" alt="{{ work.medal }}">
+              <div class="meta">{{ work.year }} {{ work.school }}</div>
+              {% if not work.chassis %}
+              <div class="meta">{{ work.chassis }}</div>
+              {% endif %}
+              <div class="description">
+                <p>{{ work.description }}</p>
+              </div>
+            </div>
+            <p class="chassis">iGEM Effect Factor: {{ work.IEF }}</p>
+            <a class="rewards" workid="{{ work.id }}" href="#">Rewards</a>
+            <div workid="{{ work.id }}" class="ui flowing popup transition hidden">
+              <ul class="ui list">
+                {% for reward in work.rewards %}
+                <li>{{ reward }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div id="right-panel-container">
+      {% if keywords %}
+      <div class="right-panel">
+        <div class="header">
+          <h3 class="ui header">Keyword relations</h3>
+        </div>
+        <div class="content">
+          <div class="chart-box">
+            <svg></svg>
+          </div>
+        </div>
+        <input type="text" id="keyword-data", value="{{ keywords }}" hidden>
+      </div>
+      {% endif %}
+
+      {% if additional.yearRelation and additional.yearRelation != '' %}
+      <div class="right-panel">
+        <div class="header">
+          <h3 class="ui header">Year relations</h3>
+        </div>
+        <div class="content">
+          <div class="chart-box">
+            <canvas id="year-chart"></canvas>
+          </div>
+        </div>
+        <input type="text" id="year-chart-data" value="{{ additional.yearRelation }}" hidden>
+      </div>
+      {% endif %}
+
+      {% if additional.name and additional.name != '' %}
+      <div class="right-panel">
+        <div class="header">
+          <h3 class="ui header">{{ additional.name }}</h3>
+        </div>
+        <div class="content">
+          {% if additional.picture != 'None' %}
+          <img class="wiki-pic" src="{{ additional.picture }}" alt="">
+          {% endif %}
+          <p>{{ additional.description }}</p>
+          <a href="{{ additional.link }}">More...</a>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if additional.trackRelation and additional.trackRelation != '' %}
+      <div class="right-panel">
+        <div class="header">
+          <h3 class="ui header">Track relations</h3>
+        </div>
+        <div class="content">
+          <div class="chart-box">
+            <canvas id="track-chart"></canvas>
+          </div>
+        </div>
+        <input type="text" id="track-chart-data" value="{{ additional.trackRelation }}" hidden>
+      </div>
+      {% endif %}
+
+      {% if additional.medalRelation and additional.medalRelation != '' %}
+      <div class="right-panel">
+        <div class="header">
+          <h3 class="ui header">Medal relations</h3>
+        </div>
+        <div class="content">
+          <div class="chart-box">
+            <canvas id="medal-chart" width="300" height="300"></canvas>
+          </div>
+        </div>
+        <input type="text" id="medal-chart-data" value="{{ additional.medalRelation }}" hidden>
+      </div>
+      {% endif %}
+    </div>
+  </body>
+
+  {% include "../login-modal.html" %}
+
+  <script src="/static/js/jquery.min.js"></script>
+  <script src="/static/semantic/dist/semantic.js"></script>
+  <script src="/static/semantic/dist/components/popup.min.js"></script>
+  <script src="/static/js/Chart.min.js"></script>
+  <script src="/static/js/d3.min.js"></script>
+  <script src="/static/js/search-box.js"></script>
+  <script src="/static/js/search/work.js"></script>
+  <script src="/static/js/login.js"></script>
+</html>

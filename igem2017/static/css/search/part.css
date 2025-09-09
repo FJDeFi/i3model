@@ -1,0 +1,220 @@
+.ui.inverted.fixed.menu {
+  background-image: url(/static/img/search/back.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: transparent;
+}
+#result-segment {
+  background: rgba(255, 255, 255, 0);
+  border-radius: 0;
+}
+#search-type-menu {
+  border-width: 0;
+  margin-bottom: 0;
+}
+#search-type-menu .item {
+  transition: all 0.1s ease;
+}
+#search-type-menu > .active.item {
+  border-color: #ffd405;
+}
+#tool-container {
+  margin-left: 10.5rem;
+  margin-top: 1rem;
+  width: 44rem;
+}
+#result-container {
+  margin-left: 10.5rem;
+  padding-top: 0.5rem;
+  width: 44rem;
+  position: absolute;
+}
+div.line {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  color: white;
+  font-size: 1rem;
+}
+.ui.text.menu {
+  margin: 0;
+}
+.ui.label {
+  border: 1px solid rgba(34, 36, 38, 0.15);
+}
+#result-span {
+  margin-left: 1ex;
+  margin-right: 2.5rem;
+}
+body {
+  background-image: url("/static/img/search/back.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+#result-box {
+  background: white;
+}
+.ui.items:last-child {
+  margin-bottom: 1rem !important;
+}
+.ui.items>.item {
+  padding: 1rem;
+  height: 10rem;
+  background: rgba(255, 255, 255, 0.7);
+  position: relative;
+  font-size: 1rem;
+}
+.ui.items>.item>.image {
+  text-align: center;
+  width: 9rem !important;
+}
+.ui.items>.item>.image>img {
+  width: 3rem;
+  margin: 0 auto;
+}
+.ui.items>.item>.image .details {
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+}
+.ui.items>.item>.image p {
+  margin-bottom: 0;
+}
+.ui.items>.item>.image .ui.divider {
+  margin: 0;
+}
+.ui.items>.item>.content {
+  position: relative;
+}
+.ui.items>.item>.content>.ui.header {
+  color: #333333;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 25rem;
+  margin-top: 0;
+}
+.ui.items>.item>.content>.ui.header>span.smaller {
+  font-size: 1.25rem;
+}
+.ui.items>.item>.content>.medal {
+  position: absolute;
+  right: 2rem;
+  top: 0.3rem;
+  line-height: 1em;
+}
+.ui.items>.item>.content>.collect {
+  position: absolute;
+  right: 0;
+  top: 0.3em;
+}
+.ui.items>.item>.content>.collect>i {line-height: 1rem;}
+.ui.items>.item>.chassis {
+  position: absolute;
+  left: 11.5rem;
+  bottom: 1rem;
+  margin-bottom: 0;
+  color: #333333;
+}
+.ui.items>.item>.rewards {
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+}
+.ui.items>.item>.content>.description {
+  margin-top: 0;
+  max-height: 2.4rem;
+  overflow: hidden;
+}
+.ui.items>.item>.content>.description p {
+  line-height: 1.2rem;
+}
+.ui.items>.item>.content>.ui.flowing.popup p, li {
+  white-space: nowrap;
+}
+#also-try {
+  padding-top: 0;
+}
+a {
+  cursor: pointer;
+}
+a {
+  color: #ffd800;
+}
+#tool {
+  color: white;
+}
+#right-panel-container {
+  margin-left: 55.5rem;
+  padding-top: 0.5rem;
+}
+.right-panel {
+  width: 26rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+.right-panel>.header {
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 2rem;
+  padding-left: 0.5em;
+  display: flex;
+  align-items: center;
+}
+.right-panel>.header>img {
+  height: 1.5em !important;
+  width: auto !important;
+  margin-right: 0.5em;
+}
+.right-panel>.header>.header {
+  font-size: 1em;
+  margin: 0;
+}
+.right-panel>.content {
+  padding: 1em;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+}
+.right-panel>.content>img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1em;
+}
+.right-panel>.wiki-pic {
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.5em;
+}
+.right-panel>p, a {
+  margin-bottom: 0;
+}
+/* SVG of d3 */
+line {
+  stroke: #fff;
+  stroke-opacity: 0.6;
+}
+circle {
+  stroke: #fff;
+  cursor: pointer;
+}
+circle:hover {
+  stroke-width: 1.5px;
+}
+text {
+  paint-order: stroke;
+  stroke-width: 3px;
+  fill: white;
+}
+.no-result {
+  color: white;
+  font-size: 1.25rem;
+}
+.no-result h5.ui.header {
+  font-size: 1em;
+  color: white;
+  margin-bottom: 0.2rem;
+}
+.no-result p {
+  margin-bottom: 0.2rem;
+}
