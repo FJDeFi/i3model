@@ -40,4 +40,3 @@
 - [models/collaborative-gan-sampling](https://github.com/vita-epfl/collaborative-gan-sampling.git)
 - [models/demo-score](https://github.com/alessing/demo-score.git)
 - [models/xenith-ai-agent](https://github.com/ecfm/xenith-ai-agent.git)
-- [models/SYSU-Software-2017](https://github.com/Crazy-Jack/SYSU-Software-2017.git)
