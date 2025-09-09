@@ -1,0 +1,12 @@
+channels:
+- conda-forge
+- defaults
+dependencies:
+- h5py=2.7.1
+- numpy=1.13.3
+- openblas=0.2.20
+- scipy=1.0.0
+- matplotlib=2.1.2
+- python=3.6.4
+- scikit-image=0.13.1
+- scikit-learn=0.19.1
