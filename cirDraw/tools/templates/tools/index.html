@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}   
+  <!-- Header -->
+  <header class="masthead">
+    <div class="container">
+      <div class="intro-text">
+        <div class="intro-lead-in">Visualization & Analysis</div>
+        <div class="intro-heading">BOOST YOUR circRNA RESEARCH</div>
+        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{% url 'tools' %}">Get Start!</a>
+        <div id="scrolldowntip" class="center movedown">
+        <a href="#services">
+        <img src="../../../static/base/img/arrows.png" class="down animated fadeInDown infinite small"></a>
+        <!--<p class="down animated fadeIn infinite copyright">What is circDraw?</p>-->
+      </div>
+      </div>
+    </div>
+  </header>  
+  
+ 
+  <!-- Features -->
+  <section id="services">
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Features</h2>
+            <h3 class="section-subheading text-muted">What is circDraw?</h3>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-4">
+            <span class="fa-stack fa-4x">
+                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                <i class="fas fa-eye fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="service-heading">Density Distribution</h4>
+            <p class="text-muted">Visualizing the circRNA distribution on chromosomes.</p>
+            <img class="manual-img" src="{% static 'base/img/density_nofilter.png' %}" width="70%">
+            </div>
+            <div class="col-md-4">
+            <span class="fa-stack fa-4x">
+                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                <i class="fas fa-table fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="service-heading">Annotations</h4>
+            <p class="text-muted">circRNA internal structure, possible modifications and diseases.</p>
+            <img class="manual-img" src="{% static 'base/img/isoformplot_ttn_m6A.png' %}" width="70%">
+            </div>
+            <div class="col-md-4">
+            <span class="fa-stack fa-4x">
+                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                <i class="fab fa-python fa-stack-1x fa-inverse"></i>
+            </span>
+            <a style="color: black" href="{% url 'download' %}"><h4 class="service-heading">Python Packages</h4></a>
+            <p class="text-muted">Python Package for local visualization.</p>
+            <p class="text-muted">Terminal Upload Interface for circDraw.</p>
+            <img class="manual-img" src="{% static 'base/img/hsa_circ_0001.png' %}" width="70%">
+            </div>
+        </div>
+        </div>
+    </section>
+  {% endblock %}
+
